@@ -70,3 +70,8 @@
   * Activate question
   * Turn Off questioning
   * Archive question
+
+
+==> Attention! You did not provide a cookie for the erlang distribution protocol in rel/config.exs
+For backwards compatibility, the release name will be used as a cookie, which is potentially a security risk!
+Please generate a secure cookie and use it with `set cookie: <cookie>` in rel/config.exs.
