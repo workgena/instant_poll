@@ -1,14 +1,16 @@
 ## Iterations:
 
-> Create HTML templates based on https://milligram.io CSS framework
+- Create HTML templates based on https://milligram.io CSS framework
 
   Pages:
+
     * GET questions/ID. Show current question
     * PUT questions/ID. Submit answer to a current question.
     * GET questions/ID/answer. Show answers to a current question
     * GET questions/answers. Show all answers to currently active questions
 
-
+- Remove unused CSS from `main.css`
+- Clean <meta> tags
 - Build application with Phoenix framework
 - Deploy with Gigalixir
 - Add GIF images: 1) Admin selects question. 2) User answers question. 3) Answers screen
