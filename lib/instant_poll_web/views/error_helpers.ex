@@ -1,4 +1,4 @@
-defmodule GigalixirGettingStartedWeb.ErrorHelpers do
+defmodule InstantPollWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule GigalixirGettingStartedWeb.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(GigalixirGettingStartedWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(InstantPollWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(GigalixirGettingStartedWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(InstantPollWeb.Gettext, "errors", msg, opts)
     end
   end
 end

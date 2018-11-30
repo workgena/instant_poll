@@ -7,4 +7,4 @@ otp_release: 20.0
 services:
   - postgresql
 before_script:
-  - PGPASSWORD=postgres psql -c 'create database gigalixir_getting_started_test;' -U postgres
+  - PGPASSWORD=postgres psql -c 'create database instant_poll_test;' -U postgres

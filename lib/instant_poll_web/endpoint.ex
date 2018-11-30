@@ -1,14 +1,14 @@
-defmodule GigalixirGettingStartedWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :gigalixir_getting_started
+defmodule InstantPollWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :instant_poll
 
-  socket "/socket", GigalixirGettingStartedWeb.UserSocket
+  socket "/socket", InstantPollWeb.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :gigalixir_getting_started, gzip: false,
+    at: "/", from: :instant_poll, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -35,10 +35,10 @@ defmodule GigalixirGettingStartedWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_gigalixir_getting_started_key",
+    key: "_instant_poll_key",
     signing_salt: "PU5hcwVF"
 
-  plug GigalixirGettingStartedWeb.Router
+  plug InstantPollWeb.Router
 
   @doc """
   Callback invoked for dynamically configuring the endpoint.
