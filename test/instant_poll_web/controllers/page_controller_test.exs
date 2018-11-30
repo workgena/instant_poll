@@ -1,5 +1,5 @@
-defmodule GigalixirGettingStartedWeb.PageControllerTest do
-  use GigalixirGettingStartedWeb.ConnCase
+defmodule InstantPollWeb.PageControllerTest do
+  use InstantPollWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

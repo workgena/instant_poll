@@ -1,4 +1,4 @@
-## Iterations:
+# TODO
 
 - Create HTML templates based on https://milligram.io CSS framework
 
@@ -12,6 +12,13 @@
 - Remove unused CSS from `main.css`
 - Clean <meta> tags
 - Build application with Phoenix framework
+  * mix.new app
+  * models
+    - polls          name:string code:string timestamps
+    - questions      name:string poll_id     answer_type:string    include_other:boolean archived:boolean voted:integer
+    - answers        name:string question_id votes:integer         answered_at:timestamp
+    - other_answers  name:string question_id answered_at:timestamp
+
 - Deploy with Gigalixir
 - Add GIF images: 1) Admin selects question. 2) User answers question. 3) Answers screen
 
@@ -70,7 +77,6 @@
   * Activate question
   * Turn Off questioning
   * Archive question
-
 
 ==> Attention! You did not provide a cookie for the erlang distribution protocol in rel/config.exs
 For backwards compatibility, the release name will be used as a cookie, which is potentially a security risk!

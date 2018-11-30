@@ -1,11 +1,11 @@
-defmodule GigalixirGettingStartedWeb.Gettext do
+defmodule InstantPollWeb.Gettext do
   @moduledoc """
   A module providing Internationalization with a gettext-based API.
 
   By using [Gettext](https://hexdocs.pm/gettext),
   your module gains a set of macros for translations, for example:
 
-      import GigalixirGettingStartedWeb.Gettext
+      import InstantPollWeb.Gettext
 
       # Simple translation
       gettext "Here is the string to translate"
@@ -20,5 +20,5 @@ defmodule GigalixirGettingStartedWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :gigalixir_getting_started
+  use Gettext, otp_app: :instant_poll
 end

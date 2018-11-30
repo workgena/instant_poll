@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :gigalixir_getting_started, GigalixirGettingStartedWeb.Endpoint,
+config :instant_poll, InstantPollWeb.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -10,10 +10,10 @@ config :gigalixir_getting_started, GigalixirGettingStartedWeb.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :gigalixir_getting_started, GigalixirGettingStarted.Repo,
+config :instant_poll, InstantPoll.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "work",
   password: "work",
-  database: "gigalixir_getting_started_test",
+  database: "instant_poll_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

@@ -1,12 +1,12 @@
-defmodule GigalixirGettingStartedWeb do
+defmodule InstantPollWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use GigalixirGettingStartedWeb, :controller
-      use GigalixirGettingStartedWeb, :view
+      use InstantPollWeb, :controller
+      use InstantPollWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,17 +19,17 @@ defmodule GigalixirGettingStartedWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: GigalixirGettingStartedWeb
+      use Phoenix.Controller, namespace: InstantPollWeb
       import Plug.Conn
-      import GigalixirGettingStartedWeb.Router.Helpers
-      import GigalixirGettingStartedWeb.Gettext
+      import InstantPollWeb.Router.Helpers
+      import InstantPollWeb.Gettext
     end
   end
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/gigalixir_getting_started_web/templates",
-                        namespace: GigalixirGettingStartedWeb
+      use Phoenix.View, root: "lib/instant_poll_web/templates",
+                        namespace: InstantPollWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 2, view_module: 1]
@@ -37,9 +37,9 @@ defmodule GigalixirGettingStartedWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import GigalixirGettingStartedWeb.Router.Helpers
-      import GigalixirGettingStartedWeb.ErrorHelpers
-      import GigalixirGettingStartedWeb.Gettext
+      import InstantPollWeb.Router.Helpers
+      import InstantPollWeb.ErrorHelpers
+      import InstantPollWeb.Gettext
     end
   end
 
@@ -54,7 +54,7 @@ defmodule GigalixirGettingStartedWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import GigalixirGettingStartedWeb.Gettext
+      import InstantPollWeb.Gettext
     end
   end
 
