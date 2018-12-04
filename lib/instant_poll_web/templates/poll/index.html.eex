@@ -1,0 +1,7 @@
+<p>Chose a poll by clicking on it.</p>
+
+<ul>
+  <%= for poll <- @polls do %>
+    <li><%= link poll.name, to: poll_path(@conn, :show, poll) %></li>
+  <% end %>
+</ul>

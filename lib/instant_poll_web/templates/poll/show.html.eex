@@ -1,0 +1,28 @@
+<h2 class="title-adaptive">What style of <u>repository&nbsp;name</u> do you prefer?</h2>
+
+<form action="answers.html" method="get">
+  <fieldset>
+    <div>
+      <input type="checkbox" id="answer1">
+      <label class="label-inline" for="answer1">camelCase</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="answer2">
+      <label class="label-inline" for="answer2">snake_case</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="answer3">
+      <label class="label-inline" for="answer3">kebab-case</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="answerOther" class="checkbox-other">
+      <label class="label-inline" for="answerOther">Other</label>
+      <input type="text" placeholder="Enter your version..." id="answerOther">
+    </div>
+
+    <input class="button-primary" type="submit" value="Send">
+  </fieldset>
+</form>

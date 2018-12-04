@@ -1,0 +1,5 @@
+<h2>New Poll</h2>
+
+<%= render "form.html", Map.put(assigns, :action, cms_poll_path(@conn, :create)) %>
+
+<span><%= link "Back", to: cms_poll_path(@conn, :index) %></span>
