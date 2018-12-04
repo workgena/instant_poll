@@ -20,14 +20,9 @@ defmodule InstantPollWeb.Router do
     get "/:id", PollController, :show
   end
 
-  #scope "/manage", InstantPollWeb.CMS, as: :cms do
-  #  pipe_through :browser
+  scope "/manage", InstantPollWeb.CMS, as: :cms do
+    pipe_through :browser
 
-  #  resources "/polls", PollController
-  #end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", InstantPollWeb do
-  #   pipe_through :api
-  # end
+    resources "/polls", PollController
+  end
 end

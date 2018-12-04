@@ -26,5 +26,3 @@
     <input class="button-primary" type="submit" value="Send">
   </fieldset>
 </form>
-
-<span><%= link "Polls list", to: poll_path(@conn, :index) %></span>

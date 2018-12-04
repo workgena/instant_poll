@@ -1,0 +1,8 @@
+<h2>Show Poll</h2>
+
+<ul>
+
+</ul>
+
+<span><%= link "Edit", to: cms_poll_path(@conn, :edit, @poll) %></span>
+<span><%= link "Back", to: cms_poll_path(@conn, :index) %></span>
