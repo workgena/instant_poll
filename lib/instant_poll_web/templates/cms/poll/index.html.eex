@@ -1,28 +1,19 @@
-<h2>Listing Polls</h2>
+<div class="clearfix">
+  <div class="float-left">
+    <h3 class="title">Polls</h2>
+  </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Archived</th>
+  <div class="float-right">
+    <%= link("New poll", to: cms_poll_path(@conn, :create), class: "button button-small", method: :post, data: [prompt: "Really?", variable: "poll[name]"]) %>
+  </div>
+</div>
 
-      <th></th>
-    </tr>
-  </thead>
+<table>
   <tbody>
 <%= for poll <- @polls do %>
     <tr>
-      <td><%= poll.name %></td>
-      <td><%= poll.archived %></td>
-
-      <td class="text-right">
-        <span><%= link "Show", to: cms_poll_path(@conn, :show, poll), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: cms_poll_path(@conn, :edit, poll), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: cms_poll_path(@conn, :delete, poll), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
-      </td>
+      <td><%= link poll.name, to: cms_poll_path(@conn, :show, poll) %></td>
     </tr>
 <% end %>
   </tbody>
 </table>
-
-<span><%= link "New Poll", to: cms_poll_path(@conn, :new) %></span>

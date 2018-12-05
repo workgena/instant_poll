@@ -1,8 +1,54 @@
-<h2>Show Poll</h2>
+<%= link to: cms_poll_path(@conn, :index) do %>
+  &larr; Back to Polls
+<% end %>
 
-<ul>
+<!--
+<span>< %= link "Show", to: cms_poll_path(@conn, :show, poll), class: "btn btn-default btn-xs" %></span>
+<span>< %= link "Edit", to: cms_poll_path(@conn, :edit, poll), class: "btn btn-default btn-xs" %></span>
+<span>< %= link "Delete", to: cms_poll_path(@conn, :delete, poll), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+-->
 
-</ul>
+<h2 class="title-adaptive">
+  <%= @poll.name %>
+  <span class="heading-font-size"><code><%= link "/#{@poll.id}", to: poll_path(@conn, :show, @poll) %></code></span>
+</h2>
 
-<span><%= link "Edit", to: cms_poll_path(@conn, :edit, @poll) %></span>
-<span><%= link "Back", to: cms_poll_path(@conn, :index) %></span>
+<p>
+  <a href="#">Rename</a>
+  | <a href="#">Archive</a>
+  | <a href="#">Delete</a>
+  | <a href="#">Stop</a>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Questions:</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <p><a href="#">What is your current IDE/Editor?</a></p>
+        <div><b>80%</b> IntelliJ IDEA family (RubyMine, PhpStorm, WebStorm, etc.)</div>
+        <div><b>5%</b> Atom</div>
+        <div><b>5%</b> VS Code</div>
+        <div><b>2%</b> Emacs or Vim</div>
+        <div><b>2%</b> Emacs or Vim</div>
+        <div><b>5%</b> Other: Gedit; Cloud9; Nano</div>
+      </td>
+      <td class="align-top">
+        <code>Active</code>
+        <br>
+        <a href="#">Show</a>
+        <br>
+        <a href="#">Edit</a>
+        <br>
+        <a href="#">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<a class="button" href="#">Add question</a>

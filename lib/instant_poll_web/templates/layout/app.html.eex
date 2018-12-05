@@ -78,16 +78,16 @@
     </nav>
 
     <section class="container">
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <div class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></div>
+      <div class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></div>
 
       <%= render @view_module, @view_template, assigns %>
     </section>
 
     <footer class="footer">
       <section class="container">
-        <p>Build with <a href="http://milligram.io" title="Milligram by CJ Patoilo" target="_blank">Milligram</a> CSS framework.<br>
-        Hosted by <a href="https://gigalixir.com/" target="_blank">Gigalixir</a>.<br>
+        <p>Build with <a href="http://milligram.io" title="Milligram by CJ Patoilo" target="_blank">Milligram</a> CSS framework.
+        Hosted on <a href="https://gigalixir.com/" target="_blank">Gigalixir</a>.
         Licensed under the <a href="https://github.com/workgena/instant_poll/blob/master/LICENSE.md" title="MIT License" target="_blank">MIT License</a>.</p>
       </section>
     </footer>
