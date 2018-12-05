@@ -21,7 +21,9 @@ defmodule InstantPollWeb.CMS.PollController do
         |> put_flash(:info, "Poll created successfully.")
         |> redirect(to: cms_poll_path(conn, :show, poll))
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        conn
+        |> put_flash(:error, "Incorrect name.")
+        |> redirect(to: cms_poll_path(conn, :index))
     end
   end
 

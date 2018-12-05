@@ -18,7 +18,9 @@ defmodule InstantPoll.Polls do
 
   """
   def list_polls do
-    Repo.all(Poll)
+    Poll
+    |> order_by(desc: :id)
+    |> Repo.all
   end
 
   @doc """

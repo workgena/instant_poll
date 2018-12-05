@@ -4,7 +4,7 @@
   * mix.new app
   * models
     - polls     name:string archived:boolean
-    - questions name:string poll_id     answer_type:string include_other:boolean voted:integer
+    - questions name:string poll_id     answer_type:string include_other:boolean
     - answers   name:string question_id
     - votes     answer_id   question_id user_answer:string
 
@@ -17,6 +17,9 @@
 
 - Remove unused CSS from `main.css`
 - Clean <meta> tags
+  * Images:
+  * /manage/images/favicon-16x16.png
+  * /manage/images/apple-touch-icon.png
 - Add video of a poll process, both admin and public screens, in sync
 - Hexadecimal representation of Poll ID (convert params[:id] hex to decimal(real ID) on-the-fly)
 
