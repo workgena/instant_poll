@@ -7,6 +7,7 @@ defmodule InstantPoll.Polls do
   alias InstantPoll.Repo
 
   alias InstantPoll.Polls.Poll
+  alias InstantPoll.Polls.Question
 
   @doc """
   Returns the list of polls.
@@ -102,5 +103,15 @@ defmodule InstantPoll.Polls do
   """
   def change_poll(%Poll{} = poll) do
     Poll.changeset(poll, %{})
+  end
+
+  def change_question(%Question{} = question) do
+    Question.changeset(question, %{})
+  end
+
+  def create_question(poll_id, attrs \\ %{}) do
+    %Question{}
+    |> Question.changeset(attrs |> Map.merge(%{"poll_id" => poll_id}))
+    |> Repo.insert()
   end
 end

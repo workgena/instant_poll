@@ -23,6 +23,8 @@ defmodule InstantPollWeb.Router do
   scope "/manage", InstantPollWeb.CMS, as: :cms do
     pipe_through :browser
 
-    resources "/polls", PollController
+    resources "/polls", PollController do
+      resources "/questions", QuestionController, except: [:index]
+    end
   end
 end

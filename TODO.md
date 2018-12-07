@@ -4,9 +4,8 @@
   * mix.new app
   * models
     - polls     name:string archived:boolean
-    - questions name:string poll_id     answer_type:string include_other:boolean
-    - answers   name:string question_id
-    - votes     answer_id   question_id user_answer:string
+    - questions name:string poll_id  answers:array:string multiple:boolean other_answer:boolean
+    - votes     question_id answers:array:string other_answer:string
 
 - Pages:
 

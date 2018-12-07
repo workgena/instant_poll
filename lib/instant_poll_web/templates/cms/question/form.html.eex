@@ -1,0 +1,28 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <fieldset>
+    <%= if @changeset.action do %>
+      <div class="alert alert-danger">
+        <p>Oops, something went wrong! Please check the errors below.</p>
+      </div>
+    <% end %>
+
+    <%= label(f, :name, "Question:") %>
+    <%= text_input(f, :name, placeholder: "What is the capital of Great Britain?") %>
+
+    <%= label(f, :multiple, "Answer type:") %>
+    <%= select(f, :multiple, [[value: "true",  key: raw("&#128505; Multiple select")],
+                              [value: "false", key: raw("&#128906; Single select")]]) %>
+
+    <%= label(f, :answers, "Answers:") %>
+    <div id="js-answers-input-container">
+      <%= text_input(f, :answers, name: "question[answers][]", placeholder: "Enter answer...") %>
+    </div>
+
+    <div>
+      <%= checkbox(f, :other_answer) %>
+      <%= label(f, :other_answer, "Include \"Other\"", class: "label-inline") %>
+    </div>
+
+    <%= submit "Save", class: "button-primary" %>
+  </fieldset>
+<% end %>
