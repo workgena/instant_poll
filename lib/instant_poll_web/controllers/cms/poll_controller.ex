@@ -29,7 +29,8 @@ defmodule InstantPollWeb.CMS.PollController do
 
   def show(conn, %{"id" => id}) do
     poll = Polls.get_poll!(id)
-    render(conn, "show.html", poll: poll)
+    questions = Polls.list_questions(id)
+    render(conn, "show.html", poll: poll, questions: questions)
   end
 
   def edit(conn, %{"id" => id}) do

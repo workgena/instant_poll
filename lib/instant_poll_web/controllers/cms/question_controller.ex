@@ -7,9 +7,10 @@ defmodule InstantPollWeb.CMS.QuestionController do
 
   def new(conn, %{"poll_id" => poll_id}) do
     poll = Polls.get_poll!(poll_id)
-    changeset = Question.changeset(%Question{}, %{})
+    question = %Question{}
+    changeset = Question.changeset(question, %{})
 
-    render(conn, "new.html", changeset: changeset, poll: poll)
+    render(conn, "new.html", changeset: changeset, poll: poll, question: question)
   end
 
   def create(conn, %{"poll_id" => poll_id, "question" => question_params}) do
@@ -23,6 +24,28 @@ defmodule InstantPollWeb.CMS.QuestionController do
       #   |> put_flash(:error, "Incorrect name.")
       #   |> redirect(to: cms_poll_path(conn, :index))
       # fix error handling
+    end
+  end
+
+  def edit(conn, %{"poll_id" => poll_id, "id" => id}) do
+    poll = Polls.get_poll!(poll_id)
+    question = Polls.get_question!(poll_id, id)
+    changeset = Polls.change_question(question)
+
+    render(conn, "edit.html", question: question, changeset: changeset, poll: poll)
+  end
+
+  def update(conn, %{"poll_id" => poll_id, "id" => id, "question" => question_params}) do
+    poll = Polls.get_poll!(poll_id)
+    question = Polls.get_question!(poll_id, id)
+
+    case Polls.update_question(question, question_params) do
+      {:ok, question} ->
+        conn
+        |> put_flash(:info, "Question updated successfully.")
+        |> redirect(to: cms_poll_path(conn, :show, poll))
+      # {:error, %Ecto.Changeset{} = changeset} ->
+      #   render(conn, "edit.html", poll: poll, changeset: changeset)
     end
   end
 end

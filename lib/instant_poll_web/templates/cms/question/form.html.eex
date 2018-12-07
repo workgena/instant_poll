@@ -15,7 +15,10 @@
 
     <%= label(f, :answers, "Answers:") %>
     <div id="js-answers-input-container">
-      <%= text_input(f, :answers, name: "question[answers][]", placeholder: "Enter answer...") %>
+    <%= for value <- (@question.answers || []) do %>
+      <%= text_input(f, :answers, name: "question[answers][]", value: value, placeholder: "Enter answer...") %>
+    <% end %>
+    <%= text_input(f, :answers, name: "question[answers][]", value: "", placeholder: "Enter answer...") %>
     </div>
 
     <div>

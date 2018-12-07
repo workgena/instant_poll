@@ -1,0 +1,7 @@
+<%= link "Polls", to: cms_poll_path(@conn, :index) %>
+&gt;
+<%= link @poll.name, to: cms_poll_path(@conn, :show, @poll.id) %>
+
+<h2 class="title-adaptive">Edit question</h2>
+
+<%= render "form.html", Map.put(assigns, :action, cms_poll_question_path(@conn, :update, @poll.id, @question.id)) %>

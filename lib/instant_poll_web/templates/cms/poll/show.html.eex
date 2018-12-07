@@ -28,26 +28,32 @@
     </tr>
   </thead>
   <tbody>
+<%= for question <- @questions do %>
     <tr>
       <td>
-        <p><a href="#">What is your current IDE/Editor?</a></p>
-        <div><b>80%</b> IntelliJ IDEA family (RubyMine, PhpStorm, WebStorm, etc.)</div>
-        <div><b>5%</b> Atom</div>
-        <div><b>5%</b> VS Code</div>
-        <div><b>2%</b> Emacs or Vim</div>
-        <div><b>2%</b> Emacs or Vim</div>
-        <div><b>5%</b> Other: Gedit; Cloud9; Nano</div>
+        <%= link question.name, to: cms_poll_question_path(@conn, :show, @poll, question) %>
+        <div>
+<%= for answer <- question.answers do %>
+          <b>80%</b> <%= answer %><br>
+<% end %>
+        </div>
       </td>
       <td class="align-top">
+        <!--
         <code>Active</code>
+        -->
+        <a class="button button-small" href="#">Pull</a>
         <br>
-        <a href="#">Show</a>
+        <%= link "Show", to: cms_poll_question_path(@conn, :show, @poll, question) %>
         <br>
-        <a href="#">Edit</a>
+        <%= link "Edit", to: cms_poll_question_path(@conn, :edit, @poll, question) %>
+        <!--
         <br>
         <a href="#">Delete</a>
+        -->
       </td>
     </tr>
+<% end %>
   </tbody>
 </table>
 
