@@ -48,4 +48,15 @@ defmodule InstantPollWeb.CMS.QuestionController do
       #   render(conn, "edit.html", poll: poll, changeset: changeset)
     end
   end
+
+  def delete(conn, %{"poll_id" => poll_id, "id" => id}) do
+    poll = Polls.get_poll!(poll_id)
+    question = Polls.get_question!(poll_id, id)
+
+    {:ok, _question} = Polls.delete_question(question)
+
+    conn
+    |> put_flash(:info, "Question deleted successfully.")
+    |> redirect(to: cms_poll_path(conn, :show, poll))
+  end
 end
