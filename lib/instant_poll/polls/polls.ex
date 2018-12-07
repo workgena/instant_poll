@@ -105,6 +105,13 @@ defmodule InstantPoll.Polls do
     Poll.changeset(poll, %{})
   end
 
+  def list_questions(poll_id) do
+    Question
+    |> where(poll_id: ^poll_id)
+    |> order_by(asc: :id)
+    |> Repo.all
+  end
+
   def change_question(%Question{} = question) do
     Question.changeset(question, %{})
   end
@@ -113,5 +120,15 @@ defmodule InstantPoll.Polls do
     %Question{}
     |> Question.changeset(attrs |> Map.merge(%{"poll_id" => poll_id}))
     |> Repo.insert()
+  end
+
+  def get_question!(poll_id, id) do
+    Repo.get!(Question, id)
+  end
+
+  def update_question(%Question{} = question, attrs) do
+    question
+    |> Question.changeset(attrs)
+    |> Repo.update()
   end
 end
