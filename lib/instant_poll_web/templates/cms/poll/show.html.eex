@@ -14,7 +14,7 @@
 </h2>
 
 <p>
-  <a href="#">Rename</a>
+  <%= link("Rename", to: cms_poll_path(@conn, :update, @poll), method: :put, data: [prompt: "Enter new name for a poll", variable: "poll[name]"]) %>
   | <a href="#">Archive</a>
   | <a href="#">Delete</a>
   | <a href="#">Stop</a>
@@ -51,4 +51,4 @@
   </tbody>
 </table>
 
-<a class="button" href="#">Add question</a>
+<%= link "Add question", to: cms_poll_question_path(@conn, :new, @poll), class: "button" %>

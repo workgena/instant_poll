@@ -24,6 +24,33 @@
   padding-left: 5px;
 }
 
+.alert {
+  margin: 2.5rem 0 2.5rem 0;
+  padding: 1rem 1.7rem 1rem 1.7rem;
+  border: 0;
+  color: #000;
+  font-family: monospace, monospace;
+  line-height: 1.6;
+  letter-spacing: .01em;
+  font-weight: 300;
+  background: #f4f5f6;
+  font-size: 86%;
+}
+
+.alert-info {
+  border-left: .3rem solid #9b4dca;
+}
+
+.alert-danger {
+  border-left: .3rem solid #f53131;
+}
+
+
+
+
+
+
+
 /* main.css */
 
 

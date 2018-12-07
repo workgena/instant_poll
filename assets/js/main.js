@@ -49,5 +49,90 @@
       }
     }
   }, false);
+})();
 
+
+//
+// Resize <textarea>
+//
+(function() {
+  var observe;
+  if (window.attachEvent) {
+    observe = function (element, event, handler) {
+      element.attachEvent('on' + event, handler);
+    };
+  }
+  else {
+    observe = function (element, event, handler) {
+      element.addEventListener(event, handler, false);
+    };
+  }
+  function init () {
+    var text = document.getElementById('question_answers');
+    function resize () {
+      text.style.height = 'auto';
+      text.style.height = (text.scrollHeight + 5) + 'px';
+    }
+    /* 0-timeout to get the already changed text */
+    function delayedResize () {
+      window.setTimeout(resize, 0);
+    }
+    observe(text, 'change',  resize);
+    observe(text, 'cut',     delayedResize);
+    observe(text, 'paste',   delayedResize);
+    observe(text, 'drop',    delayedResize);
+    observe(text, 'keydown', delayedResize);
+
+    text.focus();
+    text.select();
+    resize();
+  }
+
+  window.onload = function() {
+    init();
+  };
+})();
+
+
+
+//
+// Dynamic input[text] for answers
+//
+(function() {
+  var observe;
+  if (window.attachEvent) {
+    observe = function (element, event, handler) {
+      element.attachEvent('on' + event, handler);
+    };
+  }
+  else {
+    observe = function (element, event, handler) {
+      element.addEventListener(event, handler, false);
+    };
+  }
+
+  function init () {
+    // var input = document.getElementById('question_answers');
+    var parentNode = document.getElementById('js-answers-input-container');
+    if (!parentNode) { return; }
+
+    function resize (input) {
+      var lastInput = parentNode.querySelector(':last-child');
+      if (input.value.length && lastInput.value.length) {
+        var cln = input.cloneNode(true);
+        cln.value = "";
+        parentNode.appendChild(cln);
+      }
+    }
+
+    parentNode.addEventListener('change', function (e) {
+      resize(e.target);
+    }, false);
+
+    resize(parentNode.querySelector(':last-child'));
+  }
+
+  window.onload = function() {
+    init();
+  };
 })();
