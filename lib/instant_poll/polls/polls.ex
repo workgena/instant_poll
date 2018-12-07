@@ -131,4 +131,8 @@ defmodule InstantPoll.Polls do
     |> Question.changeset(attrs)
     |> Repo.update()
   end
+
+  def delete_question(%Question{} = question) do
+    Repo.delete(question)
+  end
 end

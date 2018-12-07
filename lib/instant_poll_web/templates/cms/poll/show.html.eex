@@ -47,10 +47,8 @@
         <%= link "Show", to: cms_poll_question_path(@conn, :show, @poll, question) %>
         <br>
         <%= link "Edit", to: cms_poll_question_path(@conn, :edit, @poll, question) %>
-        <!--
         <br>
-        <a href="#">Delete</a>
-        -->
+        <%= link "Delete", to: cms_poll_question_path(@conn, :show, @poll, question), method: :delete, data: [confirm: "Delete question?"] %>
       </td>
     </tr>
 <% end %>
