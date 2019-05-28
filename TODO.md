@@ -1,5 +1,24 @@
 # TODO
 
+Step 1 - Manage
+
+* UI: Button "Pull" question - set `active` to `true`; and redirect_back
+  - show
+  - index
+* UI: Button "Stop" finds active question and set `active` to FALSE
+
+Step 2 - Public
+
+* Navigate(of refresh) `poll_page(:id)` displays currently active question
+  1) Poll does not have active question: display welcoming text
+  2) Poll has active question: display question
+
+Step 3 - Public when question has been answered
+
+* to be continued...
+
+# Plane
+
 - Build application with Phoenix framework
   * mix.new app
   * models
@@ -42,13 +61,16 @@
   * Submit answer
   * Show answers
 - admin
-  * CRUD poll. Need for grouping questions. Public-side does not know about quiz.
+  * CRUD poll. Need for grouping questions.
     Each poll consists of questions.
+    Only one question can be active(per poll).
   * CRUD question
     Each question consists of answers.
     Answers can be "radio buttons" or "check boxes".
-    Each question has one answer "Other" - input[type=text]. Optional.
+    Each question has special answer: "Other" input[type=text]. Optional.
   * Show question answers
+    - "Pull"-action button
+    - Next/Prev links
 
     ```example
     Question:

@@ -1,0 +1,44 @@
+<%= link "Polls", to: cms_poll_path(@conn, :index) %> &#62;
+<%= link @poll.name, to: cms_poll_path(@conn, :show, @poll) %>
+<h2 class="title-adaptive" title="Click to change name"><%= @question.name %></h2>
+
+<div class="row row-top row-no-media">
+  <div class="column">
+    <a href="#">&larr; Prev</a>
+  </div>
+  <div class="column text-center">
+    <%= if @question.id == @poll.active_question_id do %>
+      <code>Active</code>
+    <% else %>
+      <%= link "Pull",
+  to: cms_poll_question_path(@conn, :update, @poll, @question),
+            method: :put,
+            class: "button" %>
+    <% end %>
+  </div>
+  <div class="column text-right">
+    <a href="#">Next &rarr;</a>
+  </div>
+</div>
+
+<h4>Results:</h4>
+
+<div>
+  <b>80%</b> IntelliJ IDEA family (RubyMine, PhpStorm, WebStorm, etc.)
+  <div class="bar-line" style="width: 80%"></div>
+
+  <b>5%</b> Atom
+  <div class="bar-line" style="width: 5%"></div>
+
+  <b>5%</b> VS Code
+  <div class="bar-line" style="width: 5%"></div>
+
+  <b>2%</b> Emacs or Vim
+  <div class="bar-line" style="width: 2%"></div>
+
+  <b>2%</b> Emacs or Vim
+  <div class="bar-line" style="width: 2%"></div>
+
+  <b>5%</b> Other: Gedit; Cloud9; Nano
+  <div class="bar-line" style="width: 5%"></div>
+</div>

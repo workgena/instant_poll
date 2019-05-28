@@ -8,12 +8,12 @@ defmodule InstantPoll.Polls.Poll do
   schema "polls" do
     field :archived, :boolean, default: false
     field :name, :string
+    belongs_to :active_question, Question
     has_many :questions, Question
 
     timestamps()
   end
 
-  @doc false
   def changeset(%Poll{} = poll, attrs) do
     poll
     |> cast(attrs, [:name, :archived])
