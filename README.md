@@ -1,5 +1,7 @@
 # Instant Poll
 
+> NOTICE: This is a playground project to study Phoenix Channels.
+
 https://instantpoll.gigalixirapp.com/
 
 Polling web app, where admin selects one question, and the audience can see/answer only this specific question.
