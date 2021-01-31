@@ -8,12 +8,15 @@ Polling web app, where admin selects one question, and the audience can see/answ
 
 ## Screens
 
-![polls](html/screenshots/polls.jpg)
-![question](html/screenshots/question.jpg)
-![answers](html/screenshots/answers.jpg)
-![edit](html/screenshots/edit_poll.jpg)
+![polls](_html/screenshots/polls.jpg)
 
-## Deploy procedure
+![question](_html/screenshots/question.jpg)
+
+![answers](_html/screenshots/answers.jpg)
+
+![edit](_html/screenshots/edit_poll.jpg)
+
+## Deploy
 
 Refer to Gigalixir [documentation](https://gigalixir.readthedocs.io/en/latest/main.html#deploy)
 

@@ -1,6 +1,14 @@
 /* This file is for your main application css. */
 
 /* theme_default.css */
+
+.row-no-media {
+  flex-direction: row;
+}
+.row-no-media .column {
+  margin-bottom: inherit;
+}
+
 .title-adaptive {
   font-size: calc(24px + (36 - 24) * ((100vw - 320px) / 680));
 }
@@ -45,6 +53,13 @@
   border-left: .3rem solid #f53131;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
 
 
 
@@ -277,66 +292,6 @@
   }
 }
 
-.prettyprint.code {
-  border: 0;
-  border-left: .3rem solid #9b4dca;
-  color: #655d5d
-}
-
-.prettyprint.code .str {
-  color: #4b8b8b
-}
-
-.prettyprint.code .kwd {
-  color: #8464c4
-}
-
-.prettyprint.code .com {
-  color: #adadad
-}
-
-.prettyprint.code .typ {
-  color: #7272ca
-}
-
-.prettyprint.code .lit {
-  color: #9b4dca
-}
-
-.prettyprint.code .pun {
-  color: #5485b6
-}
-
-.prettyprint.code .clo,
-.prettyprint.code .opn {
-  color: #f4ecec
-}
-
-.prettyprint.code .atn,
-.prettyprint.code .tag {
-  color: #9b4dca
-}
-
-.prettyprint.code .atv {
-  color: #5485b6
-}
-
-.prettyprint.code .dec {
-  color: #b45a3c
-}
-
-.prettyprint.code .var {
-  color: #ca4949
-}
-
-.prettyprint.code .fun {
-  color: #7272ca
-}
-
-.prettyprint.code.lang-md * {
-  color: #655d5d
-}
-
 .carbonads {
   background-color: #f4f5f6;
   border-radius: 4px;
@@ -388,30 +343,6 @@
   margin-bottom: 0
 }
 
-.example {
-  margin-top: 4rem;
-  position: relative
-}
-
-.example .example-header {
-  font-weight: 600;
-  margin-bottom: .5rem;
-  margin-top: 1.5rem
-}
-
-.example h1,
-.example h2,
-.example h3,
-.example h4,
-.example h5,
-.example h6 {
-  margin-bottom: 1rem
-}
-
-.example form {
-  margin-bottom: 0
-}
-
 .heading-font-size {
   color: #999;
   font-size: 1.2rem;
@@ -459,14 +390,4 @@
   margin-bottom: 2.5rem;
   text-align: center;
   text-transform: uppercase
-}
-
-.example .container {
-  padding-left: 0;
-  padding-right: 0
-}
-
-.example.row,
-.example .row {
-  margin-bottom: 0
 }

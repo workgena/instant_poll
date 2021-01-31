@@ -34,7 +34,7 @@
         <%= link question.name, to: cms_poll_question_path(@conn, :show, @poll, question) %>
         <div>
 <%= for answer <- question.answers do %>
-          <b>80%</b> <%= answer %><br>
+          <b>0%</b> <%= answer %><br>
 <% end %>
         </div>
       </td>

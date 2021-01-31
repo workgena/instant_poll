@@ -5,6 +5,13 @@ defmodule InstantPollWeb.CMS.QuestionController do
   alias InstantPoll.Polls.Poll
   alias InstantPoll.Polls.Question
 
+  def show(conn, %{"poll_id" => poll_id, "id" => id}) do
+    poll = Polls.get_poll!(poll_id)
+    question = Polls.get_question!(poll_id, id)
+
+    render(conn, :show, question: question,poll: poll)
+  end
+
   def new(conn, %{"poll_id" => poll_id}) do
     poll = Polls.get_poll!(poll_id)
     question = %Question{}
@@ -43,7 +50,7 @@ defmodule InstantPollWeb.CMS.QuestionController do
       {:ok, question} ->
         conn
         |> put_flash(:info, "Question updated successfully.")
-        |> redirect(to: cms_poll_path(conn, :show, poll))
+        |> redirect(to: cms_poll_question_path(conn, :show, poll, question))
       # {:error, %Ecto.Changeset{} = changeset} ->
       #   render(conn, "edit.html", poll: poll, changeset: changeset)
     end
